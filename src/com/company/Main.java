@@ -7,7 +7,7 @@ public class Main {
     private final static int treeSides = 2;
     private final static int defaultTreeWidth = 10;
     private final static String treeEmptyChar = " ";
-    private final static String defaultTreeTextChar = "*";
+    private final static String defaultTreeChar = "*";
 
     private static void printChristmasTreeFrom(final int treeHeight,
                                                final String treeChar) {
@@ -15,6 +15,11 @@ public class Main {
         for (int i = 0; i < treeHeight; i++) {
             int multiplesTimes = (i + 1) + i;
             printlnFrom(treeWidth, treeChar, multiplesTimes);
+            System.out.println();
+        }
+        final int treeFooterHeight = 3;
+        for (int i = 0; i < treeFooterHeight; i++) {
+            printlnFrom(treeWidth, treeChar, treeFooterHeight);
             System.out.println();
         }
     }
@@ -53,7 +58,7 @@ public class Main {
     private static String getValidTreeCharFrom(final String input) {
         return (input != null && input.length() == 1) ?
                 input :
-                defaultTreeTextChar;
+                defaultTreeChar;
     }
 
     public static void main(String[] args) {
